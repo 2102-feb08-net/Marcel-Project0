@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\revature\\Marcel-Project0\\BookClassLibrary\\BookClassLibrary\\BookClassLibrary.csproj": {}
+    "C:\\revature\\Marcel-Project0\\BookStore\\BookConsoleApp\\BookConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\revature\\Marcel-Project0\\BookClassLibrary\\BookClassLibrary\\BookClassLibrary.csproj": {
+    "C:\\revature\\Marcel-Project0\\BookStore\\BookConsoleApp\\BookConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\revature\\Marcel-Project0\\BookClassLibrary\\BookClassLibrary\\BookClassLibrary.csproj",
-        "projectName": "BookClassLibrary",
-        "projectPath": "C:\\revature\\Marcel-Project0\\BookClassLibrary\\BookClassLibrary\\BookClassLibrary.csproj",
+        "projectUniqueName": "C:\\revature\\Marcel-Project0\\BookStore\\BookConsoleApp\\BookConsoleApp.csproj",
+        "projectName": "BookConsoleApp",
+        "projectPath": "C:\\revature\\Marcel-Project0\\BookStore\\BookConsoleApp\\BookConsoleApp.csproj",
         "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-        "outputPath": "C:\\revature\\Marcel-Project0\\BookClassLibrary\\BookClassLibrary\\obj\\",
+        "outputPath": "C:\\revature\\Marcel-Project0\\BookStore\\BookConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,16 +37,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
-          "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            }
-          },
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -57,6 +49,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }

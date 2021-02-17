@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookClassLibrary
+namespace BookConsoleApp
 {
-	class Book
+	class Customer
 	{
 	}
 }
