@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore", "BookStore\BookStore.csproj", "{51603D0C-B2D5-4C31-B6C8-F387BDBA64A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Library", "BookStore\BookStore.Library.csproj", "{51603D0C-B2D5-4C31-B6C8-F387BDBA64A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookConsoleApp", "BookConsoleApp\BookConsoleApp.csproj", "{91B394C4-2B03-4B35-A41E-DF14AFCBEBEB}"
 EndProject

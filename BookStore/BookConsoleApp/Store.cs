@@ -6,5 +6,6 @@ namespace BookConsoleApp
 {
 	class Store
 	{
+		public string Location { get; set; }
 	}
 }
