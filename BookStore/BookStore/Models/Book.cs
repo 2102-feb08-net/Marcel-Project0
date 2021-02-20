@@ -6,13 +6,7 @@ namespace BookStore.Library
 {
     public class Book
     {
-        public Book(string title)
-        {
-            Title = title;
-        }
-
-
-        // fields
+        // backing fields for title, author, price properties
         private string _title;
         private string _author;
         private double _price;
