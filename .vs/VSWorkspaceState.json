@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BookStore",
+    "\\BookStore\\BookConsoleApp"
   ],
+  "SelectedNode": "\\BookStore",
   "PreviewInSolutionExplorer": false
 }

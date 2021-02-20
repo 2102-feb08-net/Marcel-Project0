@@ -1,5 +1,4 @@
 ﻿using System;
-using BookConsoleApp.Library.Storage;
 
 namespace BookConsoleApp
 {
@@ -7,6 +6,7 @@ namespace BookConsoleApp
 	{
 		static void Main(string[] args)
 		{
+			var bookInventory = new BookInventory(dataSource);
 			Console.WriteLine("Book Store");
 
 			while (true)
@@ -21,6 +21,8 @@ namespace BookConsoleApp
 				var input = Console.ReadLine();
 				{
 					var books = bookInventory.GetBooks().ToList();
+				}
+			}
 		}
 	}
 }
