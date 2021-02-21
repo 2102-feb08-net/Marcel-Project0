@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Library.Inventory
 {
-	class BookInventory
+	public class BookInventory
 	{
 		// Defines the base class for collection. Ensures user cannot alter the collection.
 		private readonly ICollection<Book> _data;
@@ -35,6 +35,22 @@ namespace BookStore.Library.Inventory
 					yield return item;
 				}
 			}
+		}
+
+		// Gets book by ID
+		public Book GetBookById(int id)
+		{
+			return _data.First(r => r.Id == id);
+		}
+
+		// Adds a book
+		public void AddBook(Book book)
+		{
+			if (_data.Any(r => r.Id == book.Id))
+			{
+				throw new InvalidOperationException($"Book with ID {book.Id} already exists.");
+			}
+			_data.Add(book);
 		}
 	}
 }

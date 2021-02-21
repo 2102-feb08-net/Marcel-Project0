@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "BookStore.Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BookStore.Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookStore.Library.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BookStore.Library/1.0.0": {
+      "type": "project",
+      "path": "../BookStore/BookStore.Library.csproj",
+      "msbuildProject": "../BookStore/BookStore.Library.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "BookStore.Library >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\marce\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\revature\\Marcel-Project0\\BookStore\\BookStore\\BookStore.Library.csproj": {
+              "projectPath": "C:\\revature\\Marcel-Project0\\BookStore\\BookStore\\BookStore.Library.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

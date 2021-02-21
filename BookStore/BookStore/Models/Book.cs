@@ -11,6 +11,9 @@ namespace BookStore.Library
         private string _author;
         private double _price;
 
+        // The book's ID
+        public int Id { get; set; }
+
         public string Title
         {
             get { return _title; }
@@ -50,7 +53,7 @@ namespace BookStore.Library
             }
         }
 
-    }
+	}
 }
 
 
