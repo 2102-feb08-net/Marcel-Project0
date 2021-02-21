@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security;
 using System.Xml.Serialization;
 using BookStore.Library;
 using BookStore.Library.Inventory;
@@ -14,7 +16,7 @@ namespace BookConsoleApp
 			// Initalizes a list of specified type. Refers to public class defined in Book file.
 			var dataSource = new List<Book>();
 			var bookInventory = new BookInventory(dataSource);
-			_ = new XmlSerializer(typeof(List<Book>));
+			var serializer = new XmlSerializer(typeof(List<Book>));
 
 			Console.WriteLine("Book Store");
 
@@ -104,10 +106,30 @@ namespace BookConsoleApp
 							Console.WriteLine(ex.Message);
 						}
 					}
-					bookInventory.AddBook(Book);
-					
+					// Calls the AddBook method in BookInventory file
+					bookInventory.AddBook(newBook);
 				}
-
+				else if (input == "s")
+				{
+					Console.WriteLine();
+					var books = bookInventory.GetBooks().ToList();
+					try
+					{
+						using (var stream = new FileStream("../../../data.xml", FileMode.Create))
+						{
+							serializer.Serialize(stream, books);
+						}
+						Console.WriteLine("Success.");
+					}
+					catch (SecurityException ex)
+					{
+						Console.WriteLine($"Error while saving: {ex.Message}");
+					}
+					catch (IOException ex)
+					{
+						Console.WriteLine($"Error while saving: {ex.Message}");
+					}
+				}
 			}
 		}
 	}

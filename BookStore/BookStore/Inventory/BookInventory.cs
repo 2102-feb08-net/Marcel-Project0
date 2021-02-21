@@ -52,5 +52,13 @@ namespace BookStore.Library.Inventory
 			}
 			_data.Add(book);
 		}
+
+		// Deletes a book
+		public void DeleteBook(int restaurantId)
+		{
+			_data.Remove(_data.First(r => r.Id == restaurantId));
+		}
+
 	}
 }
+
