@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security;
 using System.Xml.Serialization;
 using BookStore.Library;
-using BookStore.Library.Inventory;
+using BookStore.Library.Repository;
 
 namespace BookConsoleApp
 {
@@ -15,7 +15,7 @@ namespace BookConsoleApp
 		{
 			// Initalizes a list of specified type. Refers to public class defined in Book file.
 			var dataSource = new List<Book>();
-			var bookInventory = new BookInventory(dataSource);
+			var bookRepository = new BookRepository(dataSource);
 			var serializer = new XmlSerializer(typeof(List<Book>));
 
 			Console.WriteLine("Book Store");
@@ -32,7 +32,7 @@ namespace BookConsoleApp
 				var input = Console.ReadLine();
 				if (input == "r")
 				{
-					var books = bookInventory.GetBooks().ToList();
+					var books = bookRepository.GetBooks().ToList();
 					Console.WriteLine();
 					if (books.Count == 0)
 					{
@@ -107,12 +107,12 @@ namespace BookConsoleApp
 						}
 					}
 					// Calls the AddBook method in BookInventory file
-					bookInventory.AddBook(newBook);
+					bookRepository.AddBook(newBook);
 				}
 				else if (input == "s")
 				{
 					Console.WriteLine();
-					var books = bookInventory.GetBooks().ToList();
+					var books = bookRepository.GetBooks().ToList();
 					try
 					{
 						using (var stream = new FileStream("../../../data.xml", FileMode.Create))

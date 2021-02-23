@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStore.Library.Inventory
+namespace BookStore.Library.Repository
 {
-	public class BookInventory
+	public class BookRepository
 	{
 		// Defines the base class for collection. Ensures user cannot alter the collection.
 		private readonly ICollection<Book> _data;
 
 		// Initializes a new book inventory assuming a valid data source has been given
-		public BookInventory(ICollection<Book> data)
+		public BookRepository(ICollection<Book> data)
 		{
 			_data = data ?? throw new ArgumentNullException(nameof(data));
 		}

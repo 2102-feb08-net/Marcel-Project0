@@ -1,0 +1,51 @@
+CREATE DATABASE Bookstore; 
+
+CREATE TABLE Books
+(
+	BookId INT PRIMARY KEY,
+	Title NVARCHAR(100),
+	Genre NVARCHAR(100),
+	Price DECIMAL,
+	AuthorId INT FOREIGN KEY
+	REFERENCES Authors(AuthorId)
+);
+
+CREATE TABLE Authors
+(
+	AuthorId INT PRIMARY KEY,
+	FirstName NVARCHAR(100),
+	LastName NVARCHAR(100),
+	BookId INT FOREIGN KEY
+	REFERENCES Books(BookId)
+);
+
+CREATE TABLE Orders
+(
+	OrderId INT PRIMARY KEY,
+	Quantity NVARCHAR(100),
+	Price DECIMAL,
+	OrderDate DATETIME2,
+	BookId INT FOREIGN KEY
+	REFERENCES Books(BookId),
+	CustomerId INT FOREIGN KEY 
+	REFERENCES Customers(CustomerId)
+);
+
+CREATE TABLE Customers
+(
+	CustomerId INT PRIMARY KEY,
+	FirstName NVARCHAR(100),
+	LastName NVARCHAR(100),
+	City NVARCHAR(100),
+	States NVARCHAR(100),
+	PhoneNumber NVARCHAR(100)
+);
+
+CREATE TABLE Inventory
+(
+	BookId INT PRIMARY KEY,
+	StockLevel NVARCHAR(250)
+);
+
+
+
