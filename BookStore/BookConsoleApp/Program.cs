@@ -106,7 +106,7 @@ namespace BookConsoleApp
 							Console.WriteLine(ex.Message);
 						}
 					}
-					// Calls the AddBook method in BookInventory file
+					// Calls the AddBook method in BookRepository file
 					bookRepository.AddBook(newBook);
 				}
 				else if (input == "s")
@@ -129,6 +129,44 @@ namespace BookConsoleApp
 					{
 						Console.WriteLine($"Error while saving: {ex.Message}");
 					}
+				}
+				else if (input == "l")
+				{
+					Console.WriteLine();
+					List<Book> books;
+					try
+					{
+						using (var stream = new FileStream("../../../data.xml", FileMode.Open))
+						{
+							books = (List<Book>)serializer.Deserialize(stream);
+						}
+						Console.WriteLine("Success.");
+						foreach (var item in books)
+						{
+							bookRepository.AddBook(item);
+						}
+					}
+					catch (FileNotFoundException)
+					{
+						Console.WriteLine("No saved data found.");
+					}
+					catch (SecurityException ex)
+					{
+						Console.WriteLine($"Error while loading: {ex.Message}");
+					}
+					catch (IOException ex)
+					{
+						Console.WriteLine($"Error while loading: {ex.Message}");
+					}
+				}
+				else if (input == "q")
+				{
+					break;
+				}
+				else
+				{
+					Console.WriteLine();
+					Console.WriteLine($"Invalid input \"{input}\".");
 				}
 			}
 		}
