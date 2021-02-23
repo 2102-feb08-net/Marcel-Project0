@@ -1517,6 +1517,19 @@
         "runtime": {
           "bin/placeholder/BookStore.Library.dll": {}
         }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
       }
     }
   },
@@ -5766,11 +5779,17 @@
       "type": "project",
       "path": "../BookStore/BookStore.Library.csproj",
       "msbuildProject": "../BookStore/BookStore.Library.csproj"
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "BookStore.Library >= 1.0.0",
+      "DataAccess >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.3"
     ]
@@ -5804,6 +5823,9 @@
           "projectReferences": {
             "C:\\revature\\Marcel-Project0\\BookStore\\BookStore\\BookStore.Library.csproj": {
               "projectPath": "C:\\revature\\Marcel-Project0\\BookStore\\BookStore\\BookStore.Library.csproj"
+            },
+            "C:\\revature\\Marcel-Project0\\BookStore\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\revature\\Marcel-Project0\\BookStore\\DataAccess\\DataAccess.csproj"
             }
           }
         }
