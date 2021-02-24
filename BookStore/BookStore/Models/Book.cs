@@ -2,54 +2,26 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookStore.Library
+namespace BookStore.Library.Models
 {
     public class Book
     {
-        // backing fields for title, author, price properties
+        // backing fields for title
         private string _title;
-        private string _author;
-        private double _price;
 
         // The book's ID
         public int Id { get; set; }
 
         public string Title
         {
-            get { return _title; }
+            get => _title;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
+                if (value.Length == 0)
                 {
-                    throw new ArgumentException("invalid name");
+                    throw new ArgumentException("invalid title", nameof(value));
                 }
                 _title = value;
-            }
-        }
-
-        public string Author
-        {
-            get { return _author; }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("invalid name");
-                }
-                _author = value;
-            }
-        }
-
-        public double Price
-        {
-            get { return _price; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("invalid price");
-                }
-                _price = value;
             }
         }
 

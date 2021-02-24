@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BookConsoleApp
+namespace BookStore.Library.Models
 {
-	class Customer
+	public class Customer
 	{
+		public int CustomerId { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public DateTime DateofBirth { get; set; }
@@ -14,7 +15,7 @@ namespace BookConsoleApp
 	}
 
 	// Adds multiple addresses object to the customer object
-	class Address
+	public class Address
 	{
 		public string Address1 { get; set; }
 		public string Type { get; set; }

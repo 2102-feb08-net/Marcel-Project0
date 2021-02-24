@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookConsoleApp\BookConsoleApp.csproj" />
-    <ProjectReference Include="..\BookStore\BookStore.Library.csproj" />
   </ItemGroup>
 
 </Project>
