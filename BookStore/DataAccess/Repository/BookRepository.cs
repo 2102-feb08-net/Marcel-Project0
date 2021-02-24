@@ -26,7 +26,7 @@ namespace BookStore.Library.Repository
 			return new BookStore.Library.Models.Book
 			{
 				Id = book.BookId,
-				Title = book.Title
+				Title = book.Title,
 			};
 		}
 

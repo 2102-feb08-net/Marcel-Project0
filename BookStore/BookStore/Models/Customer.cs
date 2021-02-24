@@ -19,5 +19,7 @@ namespace BookStore.Library.Models
 	{
 		public string Address1 { get; set; }
 		public string Type { get; set; }
+		public object City { get; set; }
+		public object States { get; set; }
 	}
 }
